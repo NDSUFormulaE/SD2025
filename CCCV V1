@@ -14,14 +14,12 @@ Class CCCVCharger:
 	          while self.is_charging:
 	
 		          if self.voltage < self.charge_voltage:
-		              print (f"CC Mode: Voltage = {self.voltage:.2f}V, Current = 
-		              {self.charging_current:.2f}A")
+		              print (f"CC Mode: Voltage = {self.voltage:.2f}V, Current = {self.charging_current:.2f}A")
 			   self.current += 0.1
 			   self.current = self.charging_current
 			
 			else:
-			   print (f"CV Mode: Voltage = {self.voltage:.2f}V, Current = 
-			   {self.charging_current:.2f}A")
+			   print (f"CV Mode: Voltage = {self.voltage:.2f}V, Current = {self.charging_current:.2f}A")
 			   self.current -= 0.05
 			
 			If self.current <=self.termination_current:
