@@ -14,8 +14,8 @@ class CCCVCharger:
         self.current = 0.0
         self.is_charging = False
 
-        self.voltage_sensor = ADC(26)  # GP26 = ADC0
-        self.current_sensor = ADC(27)  # GP27 = ADC1
+        self.voltage_sensor = ADC(26)
+        self.current_sensor = ADC(27)
 
         self.fault_gate_driver = Pin(0, Pin.IN)
         self.fault_current_sensor = Pin(13, Pin.IN)
