@@ -1,6 +1,10 @@
-def ADCTOV(VADC, V_ref):
+from machine import ADC
+from time import sleep_ms
+    
+def ADCTOV(VADC):
     """Calculates the relative Voltage from the ADC"""
-    ADCVoltage = (VADC * 4096) * V_ref
+    k = 5/ 4095
+    ADCVoltage = VADC * k
     return ADCVoltage
 
 def VDIVADC(VinputADC):
@@ -8,7 +12,7 @@ def VDIVADC(VinputADC):
     realVoltage = (VinputADC * 21100)/1000
     return realVoltage 
 
-def ASensorADC(CinputADC):
+def CurrentSensorADC(CinputVolts):
     """Calcuateds the real Current from the hall effect Current Sensor"""
-    realCurrent = (CinputADC - 2.5) / 0.055
+    realCurrent = (CinputVolts - 2.5) / 0.055
     return realCurrent
